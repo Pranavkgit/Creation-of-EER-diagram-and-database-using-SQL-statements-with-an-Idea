@@ -1,0 +1,81 @@
+mysql> show columns from user_account;
++-------+--------------+------+-----+---------+-------+
+| Field | Type         | Null | Key | Default | Extra |
++-------+--------------+------+-----+---------+-------+
+| UID   | int          | NO   | PRI | NULL    |       |
+| Name  | varchar(255) | NO   |     | NULL    |       |
+| Phone | varchar(12)  | NO   | UNI | NULL    |       |
++-------+--------------+------+-----+---------+-------+
+3 rows in set (0.02 sec)
+
+mysql> show columns from user_roles;
++-----------+--------------+------+-----+---------+-------+
+| Field     | Type         | Null | Key | Default | Extra |
++-----------+--------------+------+-----+---------+-------+
+| RoleID    | int          | NO   | PRI | NULL    |       |
+| RoleName  | varchar(255) | NO   |     | NULL    |       |
+| Role_desc | varchar(255) | YES  |     | NULL    |       |
+| UId       | int          | NO   | MUL | NULL    |       |
++-----------+--------------+------+-----+---------+-------+
+4 rows in set (0.02 sec)
+
+mysql> show columns from tables;
++-----------+--------------+------+-----+---------+-------+
+| Field     | Type         | Null | Key | Default | Extra |
++-----------+--------------+------+-----+---------+-------+
+| TableID   | int          | NO   | PRI | NULL    |       |
+| TableName | varchar(255) | NO   |     | NULL    |       |
+| OwnerID   | int          | YES  | MUL | NULL    |       |
++-----------+--------------+------+-----+---------+-------+
+3 rows in set (0.01 sec)
+
+mysql> show columns from privilege;
++---------------+----------------------------+------+-----+---------+-------+
+| Field         | Type                       | Null | Key | Default | Extra |
++---------------+----------------------------+------+-----+---------+-------+
+| PrivilegeID   | int                        | NO   | PRI | NULL    |       |
+| PrivilegeName | varchar(255)               | NO   |     | NULL    |       |
+| PrivilegeType | enum('Account','Relation') | NO   |     | NULL    |       |
++---------------+----------------------------+------+-----+---------+-------+
+3 rows in set (0.02 sec)
+
+mysql> show columns from account_privilege;
++--------------+------+------+-----+---------+----------------+
+| Field        | Type | Null | Key | Default | Extra          |
++--------------+------+------+-----+---------+----------------+
+| Account_ID   | int  | NO   | PRI | NULL    | auto_increment |
+| Privilege_Id | int  | YES  | MUL | NULL    |                |
++--------------+------+------+-----+---------+----------------+
+2 rows in set (0.02 sec)
+
+mysql> show columns from relation_privilege;
++--------------+------+------+-----+---------+----------------+
+| Field        | Type | Null | Key | Default | Extra          |
++--------------+------+------+-----+---------+----------------+
+| Relation_ID  | int  | NO   | PRI | NULL    | auto_increment |
+| Privilege_Id | int  | YES  | MUL | NULL    |                |
++--------------+------+------+-----+---------+----------------+
+2 rows in set (0.02 sec)
+
+mysql> show columns from ur_ap;
++---------+------+------+-----+---------+----------------+
+| Field   | Type | Null | Key | Default | Extra          |
++---------+------+------+-----+---------+----------------+
+| URAP_ID | int  | NO   | PRI | NULL    | auto_increment |
+| RoleId  | int  | YES  | MUL | NULL    |                |
+| AP_ID   | int  | YES  | MUL | NULL    |                |
++---------+------+------+-----+---------+----------------+
+3 rows in set (0.02 sec)
+
+mysql> show columns from user_relation_table;
++-------------+------+------+-----+---------+-------+
+| Field       | Type | Null | Key | Default | Extra |
++-------------+------+------+-----+---------+-------+
+| URT_ID      | int  | NO   | PRI | NULL    |       |
+| RoleId      | int  | YES  | MUL | NULL    |       |
+| Relation_Id | int  | YES  | MUL | NULL    |       |
+| TableId     | int  | YES  | MUL | NULL    |       |
++-------------+------+------+-----+---------+-------+
+4 rows in set (0.02 sec)
+
+mysql> exit

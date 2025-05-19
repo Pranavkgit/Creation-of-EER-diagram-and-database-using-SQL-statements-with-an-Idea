@@ -1,0 +1,40 @@
+mysql> tee
+Currently logging to file 'log_create.txt'
+mysql> use pxm4180
+Database changed
+mysql> show tables;
+Empty set (0.02 sec)
+
+mysql> source create_assgn2.sql
+Query OK, 0 rows affected (0.23 sec)
+
+Query OK, 0 rows affected (0.35 sec)
+
+Query OK, 0 rows affected (0.23 sec)
+
+Query OK, 0 rows affected (0.21 sec)
+
+Query OK, 0 rows affected (0.25 sec)
+
+Query OK, 0 rows affected (1.10 sec)
+
+Query OK, 0 rows affected (0.18 sec)
+
+Query OK, 0 rows affected (0.27 sec)
+
+mysql> show tables;
++---------------------+
+| Tables_in_pxm4180   |
++---------------------+
+| account_privilege   |
+| privilege           |
+| relation_privilege  |
+| tables              |
+| ur_ap               |
+| user_account        |
+| user_relation_table |
+| user_roles          |
++---------------------+
+8 rows in set (0.02 sec)
+
+mysql> exit
