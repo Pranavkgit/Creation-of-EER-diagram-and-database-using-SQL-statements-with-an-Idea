@@ -1,1 +1,1 @@
-# Creation-of-EER-diagram-and-database-using-SQL-statements-with-an-Idea
+# Creation-of-EER-diagram-database-and-an-user-interface-with-an-Idea
